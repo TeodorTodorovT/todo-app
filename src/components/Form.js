@@ -9,7 +9,7 @@ const Form = ({addTask}) => {
     addTask({
       name: task,
       isComplete: false,
-      id: Math.round(Date.now() * (Math.random() * 10))
+      id: Math.round(Date.now() + (Math.random() * 100))
     })
     setTask('');
   }
