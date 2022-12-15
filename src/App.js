@@ -14,6 +14,11 @@ function App() {
     setTasks(oldTasks => oldTasks.filter(task => task.id !== id))
   }
 
+  const updateTaskHandler = (id) =>{
+    setTasks(oldTasks => oldTasks.map(task => task.id === id ? {...task, isComplete: !task.isComplete } : task))
+    
+  }
+
   return (
     <div className="App">
       <Form addTask={addTaskHandler}/>
@@ -21,6 +26,7 @@ function App() {
         <TaskList 
           tasks={tasks}
           deleteTask={deleteTaskHandler}
+          updateTask={updateTaskHandler}
         />
       }
     </div>

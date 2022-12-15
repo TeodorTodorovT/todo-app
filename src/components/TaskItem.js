@@ -1,11 +1,12 @@
 import { useState } from "react"
 
 
-const TaskItem = ({task, deleteTask}) => {
+const TaskItem = ({task, deleteTask, updateTask}) => {
     const [isChecked, setIsChecked] = useState(task.isComplete)
 
     const checkboxChangeHandler = (e) =>{
         setIsChecked(!isChecked)
+        updateTask(task.id)
     }
 
   return (

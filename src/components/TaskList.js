@@ -1,7 +1,7 @@
 import TaskItem from "./TaskItem"
 
 
-const TaskList = ({tasks, deleteTask}) => {
+const TaskList = ({tasks, deleteTask, updateTask}) => {
   return (
     <ul>
         {tasks.sort((a, b) => b.id - a.id ).map(task => (
@@ -9,6 +9,7 @@ const TaskList = ({tasks, deleteTask}) => {
                     key={task.id} 
                     task={task}
                     deleteTask={deleteTask}
+                    updateTask={updateTask}
                 />
             )
         )}
