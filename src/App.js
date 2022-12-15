@@ -10,10 +10,19 @@ function App() {
     setTasks(oldTasks => [...oldTasks, task])
   }
 
+  const deleteTaskHandler = (id) =>{
+    setTasks(oldTasks => oldTasks.filter(task => task.id !== id))
+  }
+
   return (
     <div className="App">
       <Form addTask={addTaskHandler}/>
-      {tasks && <TaskList tasks={tasks}/>}
+      {tasks && 
+        <TaskList 
+          tasks={tasks}
+          deleteTask={deleteTaskHandler}
+        />
+      }
     </div>
   );
 }
