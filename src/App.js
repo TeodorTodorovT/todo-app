@@ -14,9 +14,13 @@ function App() {
     setTasks(oldTasks => oldTasks.filter(task => task.id !== id))
   }
 
-  const updateTaskHandler = (id) =>{
+  const updateToggleTaskHandler = (id) =>{
     setTasks(oldTasks => oldTasks.map(task => task.id === id ? {...task, isComplete: !task.isComplete } : task))
     
+  }
+
+  const editTaskHandler = (id, newName) =>{
+    setTasks(oldTasks => oldTasks.map(task => task.id === id ? {...task, name: newName} : task))
   }
 
   return (
@@ -26,7 +30,8 @@ function App() {
         <TaskList 
           tasks={tasks}
           deleteTask={deleteTaskHandler}
-          updateTask={updateTaskHandler}
+          updateTask={updateToggleTaskHandler}
+          editTask={editTaskHandler}
         />
       }
     </div>
