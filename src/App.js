@@ -1,10 +1,12 @@
+import { useState } from "react";
 import Form from "./components/Form";
 
 
 function App() {
+  const [tasks, setTasks] = useState([])
 
-  const addTaskHandler = (e) =>{
-    console.log(e);
+  const addTaskHandler = (task) =>{
+    setTasks(oldTasks => [...oldTasks, task])
   }
 
   return (
