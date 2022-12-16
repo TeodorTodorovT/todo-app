@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import Form from "./components/Form";
 import TaskList from "./components/TaskList";
 
+import Snowfall from 'react-snowfall'
+
 
 function App() {
   const [tasks, setTasks] = useState(() => {
@@ -33,6 +35,8 @@ function App() {
 
   return (
     <div className="App">
+    <Snowfall color="yellow"/>
+
       <Form addTask={addTaskHandler}/>
       {tasks && 
         <TaskList 
