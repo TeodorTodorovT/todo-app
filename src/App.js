@@ -1,10 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Form from "./components/Form";
 import TaskList from "./components/TaskList";
 
 
 function App() {
-  const [tasks, setTasks] = useState([])
+  const [tasks, setTasks] = useState(() => {
+    const saved = localStorage.getItem("todo-tasks");
+    const initialValue = JSON.parse(saved);
+    return initialValue || "";
+  })
+
+  useEffect(() =>{
+    localStorage.setItem("todo-tasks", JSON.stringify(tasks))
+  }, [tasks])
 
   const addTaskHandler = (task) =>{
     setTasks(oldTasks => [...oldTasks, task])
