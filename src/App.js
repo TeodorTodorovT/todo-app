@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import Form from "./components/Form";
-import TaskList from "./components/TaskList";
+import Form from "./components/from/Form";
+import TaskList from "./components/task-list/TaskList";
 
 import Snowfall from 'react-snowfall'
 
@@ -35,8 +35,8 @@ function App() {
 
   return (
     <div className="App">
-    <Snowfall color="yellow"/>
-
+    <Snowfall/>
+      <div className="fullWrapper">
       <Form addTask={addTaskHandler}/>
       {tasks && 
         <TaskList 
@@ -46,6 +46,7 @@ function App() {
           editTask={editTaskHandler}
         />
       }
+      </div>
     </div>
   );
 }

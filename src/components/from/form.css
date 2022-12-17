@@ -1,0 +1,45 @@
+
+
+
+.formWrapper{
+    padding: 5px;
+
+}
+.formWrapper form{
+    display: flex;
+    justify-content: center;
+}
+
+.formWrapper form input{
+    font-weight: 600;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    background-color:  #474E68;
+    color: white;
+    height: 30px;
+    min-width: 550px;
+}
+
+.formWrapper form input::placeholder{
+    color: #6B728E;
+    padding: 5px;
+}
+
+
+.formWrapper form input:focus{
+    border: none;
+    outline: none;
+}
+
+
+.formWrapper form button{
+    background-color: #6B728E;
+    border: none;
+    width: 30px;
+    border-radius: 0 5px 5px 0;
+    color: #474E68;
+}
+
+.formWrapper form button:hover{
+    color: white;
+}

@@ -1,4 +1,4 @@
-import TaskItem from "./TaskItem"
+import TaskItem from "../task-item/TaskItem"
 
 
 const TaskList = ({tasks, deleteTask, updateTask, editTask}) => {

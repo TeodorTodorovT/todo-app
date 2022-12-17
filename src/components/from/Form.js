@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./form.css"
 
 const Form = ({addTask}) => {
 
@@ -19,20 +20,21 @@ const Form = ({addTask}) => {
   }
 
   return (
+    <div className="formWrapper">
     <form onSubmit={formSubmitHandler}>
-      <label htmlFor="task">Task:</label>
       <input 
         type="text" 
         name="" 
         id="task" 
         required
         maxLength={65}
-        placeholder="Enter task"
         value={task}
         onChange={currentTaskHandler}
+        placeholder="Enter a task"
       />
-      <button>Add Task</button>
+      <button><i class="fa-solid fa-plus"></i></button>      
     </form>
+    </div>
   )
 }
 
